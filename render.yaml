@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: marriage-app-api
-    env: node
-    plan: free
-    buildCommand: "npm install"
-    startCommand: "npm start"
-   
