@@ -7,20 +7,25 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// ====== 模擬數據庫 ======
-let users = []; // 保存註冊的用戶
-
-// ====== 根路由 ======
+// Root API
 app.get("/", (req, res) => {
   res.json({
     message: "Marriage Assistant API",
     status: "running",
     endpoints: [
       "POST /api/register",
-      "POST /api/bind-partner"
+      "POST /api/bind-partner",
+      "POST /api/add-diary",
+      "GET /api/get-diaries/:userId",
+      "POST /api/add-anniversary",
+      "POST /api/add-task",
+      "POST /api/generate-challenge",
+      "POST /api/complete-challenge",
+      "GET /api/leaderboard"
     ]
   });
 });
+
 
 // ====== 註冊用戶 ======
 app.post("/api/register", (req, res) => {
